@@ -1,389 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MindWorldBench</title>
-  <meta name="description" content="MindWorldBench evaluates mental-state-to-behavior reasoning in image-to-video generation.">
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-</head>
-<body>
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="MindWorldBench evaluates mental-state-to-behavior reasoning in image-to-video generation with zero-action prompting and counterfactual design.">
+  <meta property="og:title" content="MindWorldBench"/>
+  <meta property="og:description" content="Evaluating Mental-State-to-Behavior Reasoning in Image-to-Video Generation."/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <h1 class="title">MindWorldBench: Evaluating Mental-State-to-Behavior Reasoning in Image-to-Video Generation</h1>
-      <p class="subtitle">
-        Ruiqi Li*, Xuanyi Liu*, Sijia Li, Yuxin Liu, Feng Xie, Haofeng Wang, Songchao Tan, Shiqi Wang, Hanwei Zhu, Yizong Wang†, Chuanmin Jia, Siwei Ma
-      </p>
-      <p><sup>*</sup>Equal Contribution | ACM MM 2026</p>
-      <div class="buttons is-centered">
-        <a href="https://arxiv.org/pdf/xxxx.pdf" target="_blank" class="button is-dark">Paper</a>
-        <a href="https://github.com/your-repo" target="_blank" class="button is-dark">Code</a>
-        <a href="static/pdfs/dataset.zip" class="button is-dark">Dataset</a>
-        <a href="https://www.youtube.com/embed/XXXX" class="button is-dark">Demo</a>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Teaser Video -->
-<section class="hero teaser">
-  <div class="container">
-    <video poster="" autoplay controls muted loop preload="metadata" width="100%">
-      <source src="static/videos/banner_video.mp4" type="video/mp4">
-    </video>
-    <h2 class="subtitle has-text-centered">
-      MindWorldBench introduces zero-action prompting and mental-state conditioned video generation evaluation.
-    </h2>
-  </div>
-</section>
-
-<!-- Abstract -->
-<section class="section hero is-light">
-  <div class="container has-text-centered">
-    <h2 class="title is-3">Abstract</h2>
-    <p>
-      Current image-to-video models achieve visual realism and physical plausibility, but reasoning about latent mental states remains unexplored. MindWorldBench evaluates mental-state-conditioned video generation, formalizing a mental-state-to-behavior reasoning task with 744 prompts. An automated pipeline measures video quality, commonsense plausibility, and mental-state consistency. Results show models maintain visual fidelity but fail to align behaviors with latent mental states, revealing Omniscient Bias, where models default to objective world states rather than subjective beliefs.
-    </p>
-  </div>
-</section>
-
-<!-- Image Carousel -->
-<section class="hero is-small">
-  <div class="container">
-    <div id="results-carousel" class="carousel results-carousel">
-      <div class="item">
-        <img src="static/images/figure1.png" alt="MindWorldBench Taxonomy" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">MindWorldBench Taxonomy: Perception, Belief, Desire dimensions.</h2>
-      </div>
-      <div class="item">
-        <img src="static/images/figure3.png" alt="Representative examples" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">Representative examples of mental-state-to-behavior reasoning prompts.</h2>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- YouTube Video -->
-<section class="hero is-small is-light">
-  <div class="container has-text-centered">
-    <h2 class="title is-3">Video Presentation</h2>
-    <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allowfullscreen width="100%" height="480"></iframe>
-    <h2 class="subtitle">Demonstration of Zero-Action Prompting evaluation on MindWorldBench dataset.</h2>
-  </div>
-</section>
-
-<!-- Video Carousel -->
-<section class="hero is-small">
-  <div class="container">
-    <h2 class="title is-3">Generated Video Samples</h2>
-    <div id="video-carousel" class="carousel results-carousel">
-      <div class="item">
-        <video src="static/videos/cogvideox.mp4" controls muted loop width="100%"></video>
-      </div>
-      <div class="item">
-        <video src="static/videos/kling.mp4" controls muted loop width="100%"></video>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Poster PDF -->
-<section class="hero is-small is-light">
-  <div class="container">
-    <h2 class="title">Poster</h2>
-    <iframe src="static/pdfs/MindWorldBench_poster.pdf" width="100%" height="550"></iframe>
-  </div>
-</section>
-
-<!-- BibTeX -->
-<section class="section" id="BibTeX">
-  <div class="container">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{li2026mindworldbench,
-  title={MindWorldBench: Evaluating Mental-State-to-Behavior Reasoning in Image-to-Video Generation},
-  author={Ruiqi Li and Xuanyi Liu and Sijia Li and others},
-  booktitle={ACM MM 2026},
-  year={2026},
-  url={https://richard2049-lee.github.io/MindWorldBench/}
-}</code></pre>
-  </div>
-</section>
-
-</body>
-</html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
-
-  <!-- Twitter -->
+  <meta name="twitter:title" content="MindWorldBench">
+  <meta name="twitter:description" content="Evaluating Mental-State-to-Behavior Reasoning in Image-to-Video Generation.">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
-
-  <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
-  <!-- Additional SEO -->
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="image-to-video generation, mental-state reasoning, video generation evaluation, zero-action prompting, counterfactual prompts, MindWorldBench">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <!-- TODO: Replace with your paper title and authors -->
-  <!-- <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title> -->
   <title>MindWorldBench</title>
-  
-  <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
-  <!-- Critical CSS - Load synchronously -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
   <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
-  <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <!-- Fallback for browsers that don't support preload -->
-  <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  </noscript>
-  
-  <!-- Fonts - Optimized loading -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Defer non-critical JavaScript -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
-  <script defer src="static/js/index.js"></script>
-  
-  <!-- Structured Data for Academic Papers -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
-    "author": [
-      {
-        "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      }
-    ],
-    "datePublished": "2024-01-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
-    },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
-    "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
-  }
-  </script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
 </head>
 <body>
 
 
-  <!-- Scroll to Top Button -->
-  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <main id="main-content">
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">MindWorldBench</h1>
+            <h1 class="title is-1 publication-title">MindWorldBench: Evaluating Mental-State-to-Behavior Reasoning in Image-to-Video Generation</h1>
             <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+                Ruiqi Li<sup>1*</sup>,
+              </span>
+              <span class="author-block">
+                Xuanyi Liu<sup>1*</sup>,
+              </span>
+              <span class="author-block">
+                Sijia Li<sup>2*</sup>,
+              </span>
+              <span class="author-block">
+                Haofeng Wang<sup>1</sup>,
+              <span class="author-block">
+                Yuxin Liu<sup>2</sup>,
+              </span>
+              <span class="author-block">
+                Feng Xie<sup>2</sup>,
+              </span>
+              </span>
+              <span class="author-block">
+                Songchao Tan<sup>2</sup>,
+              </span>
+              <span class="author-block">
+                Shiqi Wang<sup>3</sup>,
+              </span>
+              <span class="author-block">
+                Hanwei Zhu<sup>4&dagger;</sup>,
+              </span>
+              <span class="author-block">
+                Yizong Wang<sup>1&dagger;</sup>,
+              </span>
+              <span class="author-block">
+                Chuanmin Jia<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Siwei Ma<sup>1</sup>
+              </span>
+            </div>
 
                   <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block">
+                      <sup>1</sup>Peking University
+                      <br>
+                      <sup>2</sup>University of Science and Technology Beijing
+                      <br>
+                      <sup>3</sup>City University of Hong Kong
+                      <br>
+                      <sup>4</sup>Nanyang Technological University
+                      <br>
+                      ACM MM 2026
+                    </span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution &nbsp; <sup>&dagger;</sup>Corresponding Authors</small></span>
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
+                         <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="../ACM_MM_26__ruiqi-1.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -392,9 +120,9 @@
                       </a>
                     </span>
 
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
+                    <!-- Supplementary PDF link -->
                     <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      <a href="../ACM_MM_26__ruiqi-1.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
@@ -403,9 +131,9 @@
                     </a>
                   </span>
 
-                  <!-- TODO: Replace with your GitHub repository URL -->
+                  <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/your-repo" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -414,9 +142,9 @@
                   </a>
                 </span>
 
-                <!-- TODO: Update with your arXiv paper ID -->
+                <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="../ACM_MM_26__ruiqi-1.pdf" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -433,23 +161,20 @@
 </section>
 
 
-<!-- Teaser video-->
+<!-- Main Figure -->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+      <h2 class="title is-3">Overview</h2>
+      <img src="static/page-fig/main.png" alt="Main figure"/>
+      <h2 class="content has-text-justified">
+        (Left) Evolution of Generation Paradigms: Unlike traditional Text-to-Video (explicit instruction alignment) or Video Reasoning (objective physical rules), our paradigm requires models to autonomously deduce behaviors from latent cognitive states. As illustrated, the model must prioritize the man's subjective belief over objective reality to generate the correct reasoning-driven action. 
+        (Right) MindWorldBench Taxonomy: Grounded in the BDI-P framework, we systematically categorize mental variables into three primary dimensions—Perception, Belief, and Desire—to comprehensively evaluate Theory of Mind capabilities in video generation.
       </h2>
     </div>
   </div>
 </section>
-<!-- End teaser video -->
+<!-- End main figure -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -458,9 +183,8 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Current image-to-video models achieve visual realism and physical plausibility, but reasoning about latent mental states remains unexplored. Since actions are often driven by beliefs, desires, and perceptions rather than explicit instructions, we introduce MindWorldBench to evaluate mental-state-conditioned video generation. We formalize a mental-state-to-behavior reasoning task in which models must generate actions from world states and latent mental variables without action prompts. MindWorldBench adopts zero-action prompting with counterfactual prompt design to isolate the causal effects of mental states, and an automated evaluation pipeline measures video quality, commonsense plausibility, and mental-state consistency. Evaluations across eight models show that, despite strong visual fidelity, current systems fail to align behaviors with latent mental states, revealing an Omniscient Bias in which models default to objective world states rather than a human subject's beliefs. These results expose a gap between video generation and cognitive reasoning, and highlight the need for explicit mental-state modeling in future generative systems.
           </p>
         </div>
       </div>
@@ -470,60 +194,77 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
+<!-- Dataset Figure -->
 <section class="hero is-small">
   <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Dataset</h2>
+      <div class="plain-figure">
+          <img src="static/page-fig/dataset-show.png" alt="Dataset show figure"/>
+          <h2 class="subtitle has-text-centered">
+            Representative examples from MindWorldBench. The benchmark spans the three mental dimensions: Belief, Desire, and Perception, covering diverse subcategories. Each example includes an input image and a structured mental-state prompt, followed by a question probing expected actions, highlighting the need for models to infer behavior from latent mental states.
+          </h2>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
+<!-- End dataset figure -->
 
+<!-- Evaluation Demo Figure -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Evaluation Metrics</h2>
+      <div class="plain-figure">
+          <img src="static/page-fig/eval-demo.png" alt="Evaluation metric explanation figure" class="eval-demo-image"/>
+          <h2 class="subtitle has-text-centered">
+            Illustration of evaluation metrics in a typical task. The left panel shows the input scene and mental-state prompt. The middle column indicates Intention Accuracy, whether the model-generated action matches the agent's intended goal. The right column shows World-State Consistency, whether the post-action environment remains correct. Check marks denote correct predictions, and crosses denote errors.
+          </h2>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End evaluation demo figure -->
 
+<!-- Result Figures -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Results</h2>
+      <div class="results-carousel">
+        <div class="item">
+          <img src="static/page-fig/result1.png" alt="Result figure 1"/>
+          <h2 class="subtitle has-text-centered">
+            Overall performance comparison on MindWorldBench.
+          </h2>
+        </div>
+        <div class="item">
+          <img src="static/page-fig/result2.png" alt="Result figure 2"/>
+          <h2 class="subtitle has-text-centered">
+            Performance breakdown across the three major mental dimensions: Belief, Perception, and Desire. Different models exhibit distinct strengths across dimensions.
+          </h2>
+        </div>
+        <div class="item">
+          <img src="static/page-fig/result-bar.png" alt="Result bar figure"/>
+          <h2 class="subtitle has-text-centered">
+            Diagnostic Analysis of Reasoning Failures. (a) Generated action type distribution. (b) Counterfactual paired outcomes. (c) Decomposition of action and world-state results into Both Correct, Action Correct, State Correct, and Both Incorrect.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End result figures -->
 
 
 <!-- Youtube video -->
-<section class="hero is-small is-light">
+<section class="hero is-small is-light" style="display: none;">
   <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
       <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          
           <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
             <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
@@ -535,30 +276,30 @@
 
 
 <!-- Video carousel -->
-<section class="hero is-small">
+<section class="hero is-small" style="display: none;">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Another Carousel</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+          <video poster="" id="video1" autoplay controls muted loop height="100%">
             <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
+            <source src="static/videos/carousel1.mp4"
+            type="video/mp4">
           </video>
         </div>
         <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+          <video poster="" id="video2" autoplay controls muted loop height="100%">
             <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
+            <source src="static/videos/carousel2.mp4"
+            type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\
             <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
+            <source src="static/videos/carousel3.mp4"
+            type="video/mp4">
           </video>
         </div>
       </div>
@@ -572,39 +313,15 @@
 
 
 
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
-
-
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{li2026mindworldbench,
+  title={MindWorldBench: Evaluating Mental-State-to-Behavior Reasoning in Image-to-Video Generation},
+  author={Ruiqi Li and Xuanyi Liu and Sijia Li and Yuxin Liu and Feng Xie and Haofeng Wang and Songchao Tan and Shiqi Wang and Hanwei Zhu and Yizong Wang and Chuanmin Jia and Siwei Ma},
+  booktitle={Proceedings of the 34th ACM International Conference on Multimedia},
+  year={2026}
 }</code></pre>
     </div>
 </section>
@@ -636,4 +353,4 @@
     <!-- End of Statcounter Code -->
 
   </body>
-  </html> -->
+  </html>

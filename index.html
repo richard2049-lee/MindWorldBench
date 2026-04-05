@@ -3,6 +3,124 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MindWorldBench</title>
+  <meta name="description" content="MindWorldBench evaluates mental-state-to-behavior reasoning in image-to-video generation.">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">MindWorldBench: Evaluating Mental-State-to-Behavior Reasoning in Image-to-Video Generation</h1>
+      <p class="subtitle">
+        Ruiqi Li*, Xuanyi Liu*, Sijia Li, Yuxin Liu, Feng Xie, Haofeng Wang, Songchao Tan, Shiqi Wang, Hanwei Zhu, Yizong Wang†, Chuanmin Jia, Siwei Ma
+      </p>
+      <p><sup>*</sup>Equal Contribution | ACM MM 2026</p>
+      <div class="buttons is-centered">
+        <a href="https://arxiv.org/pdf/xxxx.pdf" target="_blank" class="button is-dark">Paper</a>
+        <a href="https://github.com/your-repo" target="_blank" class="button is-dark">Code</a>
+        <a href="static/pdfs/dataset.zip" class="button is-dark">Dataset</a>
+        <a href="https://www.youtube.com/embed/XXXX" class="button is-dark">Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser Video -->
+<section class="hero teaser">
+  <div class="container">
+    <video poster="" autoplay controls muted loop preload="metadata" width="100%">
+      <source src="static/videos/banner_video.mp4" type="video/mp4">
+    </video>
+    <h2 class="subtitle has-text-centered">
+      MindWorldBench introduces zero-action prompting and mental-state conditioned video generation evaluation.
+    </h2>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section hero is-light">
+  <div class="container has-text-centered">
+    <h2 class="title is-3">Abstract</h2>
+    <p>
+      Current image-to-video models achieve visual realism and physical plausibility, but reasoning about latent mental states remains unexplored. MindWorldBench evaluates mental-state-conditioned video generation, formalizing a mental-state-to-behavior reasoning task with 744 prompts. An automated pipeline measures video quality, commonsense plausibility, and mental-state consistency. Results show models maintain visual fidelity but fail to align behaviors with latent mental states, revealing Omniscient Bias, where models default to objective world states rather than subjective beliefs.
+    </p>
+  </div>
+</section>
+
+<!-- Image Carousel -->
+<section class="hero is-small">
+  <div class="container">
+    <div id="results-carousel" class="carousel results-carousel">
+      <div class="item">
+        <img src="static/images/figure1.png" alt="MindWorldBench Taxonomy" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">MindWorldBench Taxonomy: Perception, Belief, Desire dimensions.</h2>
+      </div>
+      <div class="item">
+        <img src="static/images/figure3.png" alt="Representative examples" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">Representative examples of mental-state-to-behavior reasoning prompts.</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YouTube Video -->
+<section class="hero is-small is-light">
+  <div class="container has-text-centered">
+    <h2 class="title is-3">Video Presentation</h2>
+    <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allowfullscreen width="100%" height="480"></iframe>
+    <h2 class="subtitle">Demonstration of Zero-Action Prompting evaluation on MindWorldBench dataset.</h2>
+  </div>
+</section>
+
+<!-- Video Carousel -->
+<section class="hero is-small">
+  <div class="container">
+    <h2 class="title is-3">Generated Video Samples</h2>
+    <div id="video-carousel" class="carousel results-carousel">
+      <div class="item">
+        <video src="static/videos/cogvideox.mp4" controls muted loop width="100%"></video>
+      </div>
+      <div class="item">
+        <video src="static/videos/kling.mp4" controls muted loop width="100%"></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Poster PDF -->
+<section class="hero is-small is-light">
+  <div class="container">
+    <h2 class="title">Poster</h2>
+    <iframe src="static/pdfs/MindWorldBench_poster.pdf" width="100%" height="550"></iframe>
+  </div>
+</section>
+
+<!-- BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{li2026mindworldbench,
+  title={MindWorldBench: Evaluating Mental-State-to-Behavior Reasoning in Image-to-Video Generation},
+  author={Ruiqi Li and Xuanyi Liu and Sijia Li and others},
+  booktitle={ACM MM 2026},
+  year={2026},
+  url={https://richard2049-lee.github.io/MindWorldBench/}
+}</code></pre>
+  </div>
+</section>
+
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- Primary Meta Tags -->
   <!-- TODO: Replace with your paper title and author names -->
@@ -518,4 +636,4 @@
     <!-- End of Statcounter Code -->
 
   </body>
-  </html>
+  </html> -->

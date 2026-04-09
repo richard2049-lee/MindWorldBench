@@ -3,84 +3,135 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MindWorldBench - Interactive Video Results</title>
+  <title>MindWorldBench - Testing Video Results</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <style>
-    body {
-      background: #f6f7fb;
-    }
-    .page-wrap {
-      max-width: 1280px;
-      margin: 24px auto 48px;
-      padding: 0 16px;
-    }
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
-    }
-    .group-title {
-      margin-bottom: 12px !important;
-    }
-    .prompt-box {
-      background: #ffffff;
-      border-left: 4px solid #3273dc;
-      padding: 10px 12px;
-      margin-bottom: 12px;
-      border-radius: 6px;
-      font-size: 0.95rem;
-      line-height: 1.45;
-    }
-    .video-card {
-      background: #fff;
-      border: 1px solid #e9edf5;
-      border-radius: 8px;
-      padding: 8px;
-    }
-    .video-card video {
-      width: 100%;
-      border-radius: 6px;
-      display: block;
-      background: #000;
-    }
-    .model-label {
-      text-align: center;
-      font-size: 0.85rem;
-      color: #5c6370;
-      margin-top: 6px;
-      margin-bottom: 0;
-      font-weight: 600;
-    }
-    .case-title {
-      margin-top: 18px;
-      margin-bottom: 10px !important;
-    }
-  </style>
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <script defer src="static/js/fontawesome.all.min.js"></script>
 </head>
 <body>
-  <div class="page-wrap">
-    <div class="topbar">
-      <h1 class="title is-3" style="margin:0;">Interactive Testing Video Results</h1>
-      <div class="buttons" style="margin:0;">
-        <button id="prevBtn" class="button is-link is-light">Previous</button>
-        <button id="nextBtn" class="button is-link">Next</button>
-      </div>
+
+  <!-- Back button to main page -->
+  <section class="section" style="padding-bottom: 0;">
+    <div class="container is-max-desktop">
+      <a href="index.html" class="button is-link is-light">
+        <span class="icon">
+          <i class="fas fa-arrow-left"></i>
+        </span>
+        <span>Back to Project Page</span>
+      </a>
     </div>
+  </section>
 
-    <div class="box">
-      <h2 id="groupTitle" class="title is-4 group-title"></h2>
-      <p id="groupCounter" class="subtitle is-6" style="margin-top:-6px;"></p>
+<!-- Testing Video Results -->
+<section class="section" id="interactive-results">
+  <div class="container is-max-desktop">
+    <style>
+      .case-wrap-1 {
+        background-color: #f1f6ff; /* soft gentle blue */
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-bottom: 2.5rem;
+        border: 1px solid #d4e2fc;
+      }
+      .case-wrap-2 {
+        background-color: #fff1f3; /* soft gentle red */
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        border: 1px solid #fce2e6;
+      }
+      .overall-box {
+        background-color: #f8fafc !important; /* overall container soft gray */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      }
+      .page-wrap {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+      }
+      .prompt-box {
+        background: #fdfdfd;
+        border: 1px solid #e9edf5;
+        border-radius: 8px;
+        padding: 16px;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        height: 100%;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+      }
+      .prompt-box b {
+        font-weight: 700;
+        background: #fff3cd;
+        padding: 0 4px;
+        border-radius: 4px;
+      }
+      .video-card {
+        background: #fff;
+        border: 1px solid #e9edf5;
+        border-radius: 8px;
+        padding: 8px;
+      }
+      .video-card video {
+        width: 100%;
+        border-radius: 6px;
+        display: block;
+        background: #000;
+      }
+      .model-label {
+        text-align: center;
+        font-size: 0.85rem;
+        color: #5c6370;
+        margin-top: 8px;
+        margin-bottom: 0;
+        font-weight: 600;
+      }
+      .case-title {
+        margin-top: 18px;
+        margin-bottom: 10px !important;
+        font-weight: bold;
+        border-bottom: 3px solid #3273dc;
+        padding-bottom: 4px;
+      }
+      .interactive-controls {
+        margin-bottom: 2rem;
+      }
+    </style>
 
-      <h3 class="title is-5 case-title">Case 1 Prompt</h3>
-      <div id="case1Prompt" class="prompt-box"></div>
-      <div id="case1Grid" class="columns is-multiline"></div>
+    <div class="page-wrap">
+      <div class="topbar">
+        <h2 class="title is-3" style="margin:0;">Testing Video Results</h2>
+        <div class="buttons" style="margin:0;">
+          <button id="prevBtn" class="button is-link is-light">Previous</button>
+          <button id="nextBtn" class="button is-link">Next</button>
+        </div>
+      </div>
 
-      <h3 class="title is-5 case-title">Case 2 Prompt</h3>
-      <div id="case2Prompt" class="prompt-box"></div>
-      <div id="case2Grid" class="columns is-multiline"></div>
+      <div class="box overall-box" style="padding: 2rem; border-top: 4px solid #3273dc; border-radius: 8px;">
+        <h3 id="groupTitle" class="title is-4 has-text-centered" style="margin-bottom: 1.5rem;"></h3>
+        
+        <div class="columns is-desktop interactive-controls">
+          <div class="column is-6">
+            <h4 class="title is-5 case-title">Case 1 Prompt</h4>
+            <div id="case1Prompt" class="prompt-box"></div>
+          </div>
+          <div class="column is-6">
+            <h4 class="title is-5 case-title" style="border-bottom-color: #f14668;">Case 2 Prompt</h4>
+            <div id="case2Prompt" class="prompt-box"></div>
+          </div>
+        </div>
+
+        <div id="videoContainer"></div>
+      </div>
     </div>
   </div>
 
@@ -97,74 +148,24 @@
     ];
 
     const groups = [
-      {
-        title: "Object Beliefs - Object State",
-        case1Prompt: "A person stands in front of a locked door featuring a handle and a keyhole beneath it, holding the key in their hand. The person sees the door, desires to enter the room, and believes that the door is unlocked. Fixed camera.",
-        case2Prompt: "A person stands in front of a locked door featuring a handle and a keyhole beneath it, holding the key in their hand. The person sees the door, desires to enter the room, and believes that the door is locked. Fixed camera."
-      },
-      {
-        title: "Object Beliefs - Object Attributes",
-        case1Prompt: "A person stands in a kitchen seeing a recently heated pot on the stove and a pair of heat-resistant gloves resting on the counter nearby. The person wants to move the pot off the stove while avoiding any burns to their hands, and believes that the pot handle is currently not hot. Fixed camera.",
-        case2Prompt: "A person stands in a kitchen seeing a recently heated pot on the stove and a pair of heat-resistant gloves resting on the counter nearby. The person wants to move the pot off the stove while avoiding any burns to their hands, and believes that the pot handle is currently very hot. Fixed camera."
-      },
-      {
-        title: "Object Beliefs - Stability",
-        case1Prompt: "A tall block tower stands on a table. A person sees the block tower while holding a single block in their hand. The person desires to build the tower higher while keeping it stable, and believes that the current block tower is highly stable. Fixed camera.",
-        case2Prompt: "A tall block tower stands on a table. A person sees the block tower while holding a single block in their hand. The person desires to build the tower higher while keeping it stable, and believes that the current block tower is highly unstable. Fixed camera."
-      },
-      {
-        title: "Temporal Beliefs - Duration",
-        case1Prompt: "A person stands near the end of a line at a service counter. The person sees many people queuing in front of the counter. The person wants to handle personal business and believes that they will reach the counter before the working hours end. Fixed camera.",
-        case2Prompt: "A person stands near the end of a line at a service counter. The person sees many people queuing in front of the counter. The person wants to handle personal business and believes that the working hours will end before they reach the counter. Fixed camera."
-      },
-      {
-        title: "Temporal Beliefs - Future Prediction",
-        case1Prompt: "A person is in a room with an umbrella and thick winter gloves on a table. The person sees the umbrella and thick winter gloves on the table. The person prepares to go outside, wishes to carry one item, and wants to stay comfortable outdoors. The person believes that the weather outside is going to be rainy and wet. Fixed camera.",
-        case2Prompt: "A person is in a room with an umbrella and thick winter gloves on a table. The person sees the umbrella and thick winter gloves on the table. The person prepares to go outside, wishes to carry one item, and wants to stay comfortable outdoors. The person believes that the weather outside is going to be snowy and cold. Fixed camera."
-      },
-      {
-        title: "Spatial Beliefs - Containment",
-        case1Prompt: "A person stands before a table observing a brightly colored toy box and a simple wooden book box. In reality, the toy box contains books, and the book box contains toys. The person wants to retrieve a toy. The person firmly believes that the toy is currently located inside the brightly colored toy box. Fixed camera.",
-        case2Prompt: "A person stands before a table observing a brightly colored toy box and a simple wooden book box. In reality, the toy box contains books, and the book box contains toys. The person wants to retrieve a toy. The person firmly believes that the toy is currently located inside the simple wooden book box. Fixed camera."
-      },
-      {
-        title: "Intrinsic Preferences - Attribute Preferences",
-        case1Prompt: "A person sits at a desk with a clear glass of water and a small cup of strong coffee placed directly in front of them, observing the two beverages. The person feels extremely thirsty and strongly desires to quickly replenish hydration. The person believes that the desk currently holds water and coffee. Fixed camera.",
-        case2Prompt: "A person sits at a desk with a clear glass of water and a small cup of strong coffee placed directly in front of them, observing the two beverages. The person feels extremely sleepy and strongly desires to quickly restore alertness. The person believes that the desk currently holds water and coffee. Fixed camera."
-      },
-      {
-        title: "Intrinsic Preferences - Attribute Preferences",
-        case1Prompt: "A salad and a steak are placed on the table. The person sees the two meals, desires to replenish more energy, and believes that a salad and a steak are available on the table. Fixed camera.",
-        case2Prompt: "A salad and a steak are placed on the table. The person sees the two meals, desires to eat something light, and believes that a salad and a steak are available on the table. Fixed camera."
-      },
-      {
-        title: "Intertemporal Goals - Delayed Reward",
-        case1Prompt: "A person sees a piece of cake on the table and knows that waiting until tomorrow will result in more cake. The person desires to consume the cake now and believes that the piece of cake is on the table. Fixed camera.",
-        case2Prompt: "A person sees a piece of cake on the table and knows that waiting until tomorrow will result in more cake. The person desires to acquire more cake later and believes that the piece of cake is on the table. Fixed camera."
-      },
-      {
-        title: "Instrumental Goals - Trade-off Preferences",
-        case1Prompt: "A person stands before two distinct paths, one muddy and one asphalt, both leading to the exact same destination. The person perceives the muddy path and the asphalt path, believes that the muddy path is a faster route while the asphalt path is slower, and desires to reach the destination as fast as possible today. Fixed camera.",
-        case2Prompt: "A person stands before two distinct paths, one muddy and one asphalt, both leading to the exact same destination. The person perceives the muddy path and the asphalt path, believes that the muddy path is a faster route while the asphalt path is slower, and desires to keep their clothes and shoes completely clean today. Fixed camera."
-      },
-      {
-        title: "Instrumental Goals - Functional Selection",
-        case1Prompt: "A person sits at a table with a cup of coffee and a glass of milk in front of them. The person perceives both drinks, believes that the table holds both options, and desires to consume a beverage to stay awake and alert. Fixed camera.",
-        case2Prompt: "A person sits at a table with a cup of coffee and a glass of milk in front of them. The person perceives both drinks, believes that the table holds both options, and desires to consume a beverage to fall asleep and relax. Fixed camera."
-      },
-      {
-        title: "Rule Cue Perception - Context-Specific Rule Cues",
-        case1Prompt: "A man who is Hindu and accustomed to eating with their hands is dining at a restaurant with food and utensils on the table, and he has a strong habit of eating with his hands. He desires to enjoy his meal. He clearly notices the restaurant table sign prohibiting eating with hands. Fixed camera.",
-        case2Prompt: "A man who is Hindu and accustomed to eating with their hands is dining at a restaurant with food and utensils on the table, and he has a strong habit of eating with his hands. He desires to enjoy his meal. He entirely misses the restaurant table sign prohibiting eating with hands. Fixed camera."
-      }
+      { title: "Object Beliefs - Object State", case1Prompt: "A person stands in front of a locked door featuring a handle and a keyhole beneath it, holding the key in their hand. The person sees the door, desires to enter the room, and believes that the door is <b style='color:#b00;'>unlocked.</b> Fixed camera.", case2Prompt: "A person stands in front of a locked door featuring a handle and a keyhole beneath it, holding the key in their hand. The person sees the door, desires to enter the room, and believes that the door is <b style='color:#00b;'>locked.</b> Fixed camera." },
+      { title: "Object Beliefs - Object Attributes", case1Prompt: "A person stands in a kitchen seeing a recently heated pot on the stove and a pair of heat-resistant gloves resting on the counter nearby. The person wants to move the pot off the stove while avoiding any burns to their hands, and believes that the pot handle is currently <b style='color:#b00;'>not</b> hot. Fixed camera.", case2Prompt: "A person stands in a kitchen seeing a recently heated pot on the stove and a pair of heat-resistant gloves resting on the counter nearby. The person wants to move the pot off the stove while avoiding any burns to their hands, and believes that the pot handle is currently <b style='color:#00b;'>very</b> hot. Fixed camera." },
+      { title: "Object Beliefs - Stability", case1Prompt: "A tall block tower stands on a table. A person sees the block tower while holding a single block in their hand. The person desires to build the tower higher while keeping it stable, and believes that the current block tower is highly <b style='color:#b00;'>stable.</b> Fixed camera.", case2Prompt: "A tall block tower stands on a table. A person sees the block tower while holding a single block in their hand. The person desires to build the tower higher while keeping it stable, and believes that the current block tower is highly <b style='color:#00b;'>unstable.</b> Fixed camera." },
+      { title: "Temporal Beliefs - Duration", case1Prompt: "A person stands near the end of a line at a service counter. The person sees many people queuing in front of the counter. The person wants to handle personal business and believes that <b style='color:#b00;'>they will reach the counter before</b> the working hours <b style='color:#b00;'>end.</b> Fixed camera.", case2Prompt: "A person stands near the end of a line at a service counter. The person sees many people queuing in front of the counter. The person wants to handle personal business and believes that the working hours <b style='color:#00b;'>will end before they reach the counter.</b> Fixed camera." },
+      { title: "Temporal Beliefs - Future Prediction", case1Prompt: "A person is in a room with an umbrella and thick winter gloves on a table. The person sees the umbrella and thick winter gloves on the table. The person prepares to go outside, wishes to carry one item, and wants to stay comfortable outdoors. The person believes that the weather outside is going to be <b style='color:#b00;'>rainy</b> and <b style='color:#b00;'>wet.</b> Fixed camera.", case2Prompt: "A person is in a room with an umbrella and thick winter gloves on a table. The person sees the umbrella and thick winter gloves on the table. The person prepares to go outside, wishes to carry one item, and wants to stay comfortable outdoors. The person believes that the weather outside is going to be <b style='color:#00b;'>snowy</b> and <b style='color:#00b;'>cold.</b> Fixed camera." },
+      { title: "Spatial Beliefs - Containment", case1Prompt: "A person stands before a table observing a brightly colored toy box and a simple wooden book box. In reality, the toy box contains books, and the book box contains toys. The person wants to retrieve a toy. The person firmly believes that the toy is currently located inside the <b style='color:#b00;'>brightly colored toy</b> box. Fixed camera.", case2Prompt: "A person stands before a table observing a brightly colored toy box and a simple wooden book box. In reality, the toy box contains books, and the book box contains toys. The person wants to retrieve a toy. The person firmly believes that the toy is currently located inside the <b style='color:#00b;'>simple wooden book</b> box. Fixed camera." },
+      { title: "Intrinsic Preferences - Attribute Preferences", case1Prompt: "A person sits at a desk with a clear glass of water and a small cup of strong coffee placed directly in front of them, observing the two beverages. The person feels extremely <b style='color:#b00;'>thirsty</b> and strongly desires to quickly <b style='color:#b00;'>replenish hydration.</b> The person believes that the desk currently holds water and coffee. Fixed camera.", case2Prompt: "A person sits at a desk with a clear glass of water and a small cup of strong coffee placed directly in front of them, observing the two beverages. The person feels extremely <b style='color:#00b;'>sleepy</b> and strongly desires to quickly <b style='color:#00b;'>restore alertness.</b> The person believes that the desk currently holds water and coffee. Fixed camera." },
+      { title: "Intrinsic Preferences - Attribute Preferences", case1Prompt: "A salad and a steak are placed on the table. The person sees the two meals, desires to <b style='color:#b00;'>replenish more energy,</b> and believes that a salad and a steak are available on the table. Fixed camera.", case2Prompt: "A salad and a steak are placed on the table. The person sees the two meals, desires to <b style='color:#00b;'>eat something light,</b> and believes that a salad and a steak are available on the table. Fixed camera." },
+      { title: "Intertemporal Goals - Delayed Reward", case1Prompt: "A person sees a piece of cake on the table and knows that waiting until tomorrow will result in more cake. The person desires to <b style='color:#b00;'>consume the</b> cake <b style='color:#b00;'>now</b> and believes that the piece of cake is on the table. Fixed camera.", case2Prompt: "A person sees a piece of cake on the table and knows that waiting until tomorrow will result in more cake. The person desires to <b style='color:#00b;'>acquire more</b> cake <b style='color:#00b;'>later</b> and believes that the piece of cake is on the table. Fixed camera." },
+      { title: "Instrumental Goals - Trade-off Preferences", case1Prompt: "A person stands before two distinct paths, one muddy and one asphalt, both leading to the exact same destination. The person perceives the muddy path and the asphalt path, believes that the muddy path is a faster route while the asphalt path is slower, and desires to <b style='color:#b00;'>reach the destination as fast as possible</b> today. Fixed camera.", case2Prompt: "A person stands before two distinct paths, one muddy and one asphalt, both leading to the exact same destination. The person perceives the muddy path and the asphalt path, believes that the muddy path is a faster route while the asphalt path is slower, and desires to <b style='color:#00b;'>keep their clothes and shoes completely clean</b> today. Fixed camera." },
+      { title: "Instrumental Goals - Functional Selection", case1Prompt: "A person sits at a table with a cup of coffee and a glass of milk in front of them. The person perceives both drinks, believes that the table holds both options, and desires to consume a beverage to <b style='color:#b00;'>stay awake</b> and <b style='color:#b00;'>alert.</b> Fixed camera.", case2Prompt: "A person sits at a table with a cup of coffee and a glass of milk in front of them. The person perceives both drinks, believes that the table holds both options, and desires to consume a beverage to <b style='color:#00b;'>fall asleep</b> and <b style='color:#00b;'>relax.</b> Fixed camera." },
+      { title: "Rule Cue Perception - Context-Specific Rule Cues", case1Prompt: "A man who is Hindu and accustomed to eating with their hands is dining at a restaurant with food and utensils on the table, and he has a strong habit of eating with his hands. He desires to enjoy his meal. He <b style='color:#b00;'>clearly notices</b> the restaurant table sign prohibiting eating with hands. Fixed camera.", case2Prompt: "A man who is Hindu and accustomed to eating with their hands is dining at a restaurant with food and utensils on the table, and he has a strong habit of eating with his hands. He desires to enjoy his meal. He <b style='color:#00b;'>entirely misses</b> the restaurant table sign prohibiting eating with hands. Fixed camera." }
     ];
 
     const groupTitle = document.getElementById("groupTitle");
-    const groupCounter = document.getElementById("groupCounter");
     const case1Prompt = document.getElementById("case1Prompt");
     const case2Prompt = document.getElementById("case2Prompt");
-    const case1Grid = document.getElementById("case1Grid");
-    const case2Grid = document.getElementById("case2Grid");
+    const videoContainer = document.getElementById("videoContainer");
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
 
@@ -172,7 +173,7 @@
 
     function buildVideoCard(groupIndex, caseId, model) {
       const col = document.createElement("div");
-      col.className = "column is-3";
+      col.className = "column is-3-desktop is-4-tablet is-6-mobile";
 
       const card = document.createElement("div");
       card.className = "video-card";
@@ -181,7 +182,6 @@
       video.controls = true;
       video.muted = true;
       video.loop = true;
-      // Load enough data to show first frame, but no autoplay.
       video.preload = "auto";
 
       const src = document.createElement("source");
@@ -201,22 +201,60 @@
 
     function renderGroup(index) {
       const g = groups[index];
-      groupTitle.textContent = g.title;
-      groupCounter.textContent = `Group ${index + 1} / ${groups.length}`;
-      case1Prompt.textContent = g.case1Prompt;
-      case2Prompt.textContent = g.case2Prompt;
+      groupTitle.innerHTML = g.title;
+      case1Prompt.innerHTML = g.case1Prompt;
+      case2Prompt.innerHTML = g.case2Prompt;
 
-      case1Grid.innerHTML = "";
-      case2Grid.innerHTML = "";
+      videoContainer.innerHTML = "";
+
+      const case1Wrap = document.createElement("div");
+      case1Wrap.className = "case-wrap-1";
+      const case1Heading = document.createElement("h4");
+      case1Heading.className = "title is-5 case-title";
+      case1Heading.textContent = "Case 1 Videos";
+      case1Heading.style.marginTop = "0";
+      case1Wrap.appendChild(case1Heading);
+
+      const case1Grid = document.createElement("div");
+      case1Grid.className = "columns is-multiline is-mobile";
+      
+      const case2Wrap = document.createElement("div");
+      case2Wrap.className = "case-wrap-2";
+      const case2Heading = document.createElement("h4");
+      case2Heading.className = "title is-5 case-title";
+      case2Heading.style.borderBottomColor = "#f14668";
+      case2Heading.style.marginTop = "0";
+      case2Heading.textContent = "Case 2 Videos";
+      case2Wrap.appendChild(case2Heading);
+
+      const case2Grid = document.createElement("div");
+      case2Grid.className = "columns is-multiline is-mobile";
 
       models.forEach((m) => {
         case1Grid.appendChild(buildVideoCard(index, 1, m));
         case2Grid.appendChild(buildVideoCard(index, 2, m));
       });
 
+      case1Wrap.appendChild(case1Grid);
+      case2Wrap.appendChild(case2Grid);
+
+      videoContainer.appendChild(case1Wrap);
+      videoContainer.appendChild(case2Wrap);
+
       prevBtn.disabled = index === 0;
       nextBtn.disabled = index === groups.length - 1;
     }
+
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft" && current > 0) {
+        current -= 1;
+        renderGroup(current);
+      } else if (e.key === "ArrowRight" && current < groups.length - 1) {
+        current += 1;
+        renderGroup(current);
+      }
+    });
 
     prevBtn.addEventListener("click", () => {
       if (current > 0) {
@@ -234,5 +272,22 @@
 
     renderGroup(current);
   </script>
+</section>
+<!-- End Testing Video Results -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p>
+              This page was generated as part of the MindWorldBench project.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
